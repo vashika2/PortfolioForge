@@ -55,7 +55,7 @@ function Dashboard() {
 
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/portfolio/${userId}`
+          `https://portfolioforge-backend-fl80.onrender.com/api/portfolio/${userId}`
         );
 
         setPortfolio({
@@ -79,7 +79,7 @@ function Dashboard() {
     }
 
     try {
-      const res = await axios.post("https://portfolioforge-backend-fl80.onrender.com/api/portfolio", {
+      const res = await axios.post("https://portfolioforge-backend-fl80.onrender.com/api/portfolio") {
         ...portfolio,
         userId,
       });
