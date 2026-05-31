@@ -13,7 +13,7 @@ function PublicPortfolio() {
     const fetchPortfolio = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/portfolio/${userId}`
+          `https://portfolioforge-backend-fl80.onrender.com/api/portfolio/${userId}`
         );
 
         setPortfolio(res.data);
