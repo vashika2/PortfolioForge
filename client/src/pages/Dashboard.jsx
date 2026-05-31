@@ -79,10 +79,13 @@ function Dashboard() {
     }
 
     try {
-      const res = await axios.post("https://portfolioforge-backend-fl80.onrender.com/api/portfolio") {
-        ...portfolio,
-        userId,
-      });
+      const res = await axios.post(
+        "https://portfolioforge-backend-fl80.onrender.com/api/portfolio",
+        {
+          ...portfolio,
+          userId,
+        }
+      );
 
       toast.success(res.data.message);
     } catch (error) {
@@ -91,7 +94,7 @@ function Dashboard() {
   };
 
   const copyPortfolioLink = () => {
-    const link = `http://localhost:5173/portfolio/${userId}`;
+    const link = `${window.location.origin}/portfolio/${userId}`;
     navigator.clipboard.writeText(link);
     toast.success("Portfolio link copied!");
   };
